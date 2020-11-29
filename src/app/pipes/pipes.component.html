@@ -1,0 +1,30 @@
+<p>pipes works!</p>
+
+<p>{{title1 | uppercase}}</p>
+<p>{{title2 | lowercase}}</p>
+
+<p>{{title2 | titlecase}}</p>
+
+<p>{{6589.23 | currency:"USD"}}</p>
+<p>{{6589.23 | currency:"EUR"}}</p>
+
+<p>{{todaydate}}</p>
+<p>{{todaydate | date:'d/M/y'}}</p>
+<p>{{todaydate | date:'shortTime'}}</p>
+<p>{{todaydate | date:'short'}}</p>
+<p>{{todaydate | date:'shortDate'}}</p>
+
+<p>{{ 24.7 | number: '3.3-4' }}</p>
+
+<p>{{ jsonval | json }}</p>
+
+<p>{{00.54565 | percent}}</p>
+
+<p>{{ title1 | slice:2:8}}</p>
+<p>{{ months | slice:2:6}}</p>
+
+<hr>
+<button class="btn btn-secondary" (click)="loadForms()">Load Forms</button>
+<hr>
+<router-outlet></router-outlet>
+<hr>

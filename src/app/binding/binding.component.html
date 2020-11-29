@@ -1,0 +1,30 @@
+<p>binding works!</p>
+<!-- Basic Data Binding -->
+<p>Applicant Name = {{application}}</p>
+<p>100 * 200 = {{ 100 * 200 }}</p>
+<p>{{application.length}}</p>
+
+<!-- Property Binding -->
+<input type='text' id='a1' value='Hi everyone' [disabled]='isDisabled' />
+
+<!-- Class and Style Binding -->
+<h2 [class]="newClass">SCTPL1</h2>
+<h2 [class.text-danger]="hasError">SCTPL3</h2>
+<h2 [ngClass]="messageClasses">Message</h2>
+
+<h2 [style.color]="hasError ? 'red' : 'green'">Style Binding 2</h2>
+<h2 [style.color]="highlightColor">Style Binding 3</h2>
+<h2 [ngStyle]="titleStyles">Style Binding 4</h2>
+
+<!-- Event Binding -->
+<button (click)="myClickFunction($event)">Click Me</button>
+
+<!-- Two way binding -->
+<br/><br/>
+
+<input type="text" [(ngModel)]='typeValue' />
+<p>{{typeValue}}</p>
+<button (click)="updateValue()" class="btn btn-success">Update</button>
+
+<hr>
+<p>{{mydate}}</p>

@@ -1,0 +1,41 @@
+<p>directive works!</p>
+
+<!-- *ngIf -->
+
+<div *ngIf='isAvailable else elseBlock'>
+    <p>Data is present</p>
+</div>
+<ng-template #elseBlock>
+    <p>Data is not present</p>
+</ng-template>
+
+<!-- *ngFor -->
+
+<div *ngFor='let color of colors'>
+    <p>{{color}}</p>
+</div>
+
+<table *ngIf="employeeData">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Age</th>
+    </tr>
+    <tr *ngFor='let items of employeeData'>
+        <td>{{items.id}}</td>
+        <td>{{items.name}}</td>
+        <td>{{items.age}}</td>
+    </tr>
+</table>
+
+
+<!-- *ngSwitch -->
+
+<div [ngSwitch]="vehicle">
+    <div *ngSwitchCase="'car'">Vehicle is car</div>
+    <div *ngSwitchCase="'bike'">Vehicle is bike</div>
+    <div *ngSwitchCase="'bus'">Vehicle is bus</div>
+    <div *ngSwitchDefault>No Vehicle Present</div>
+</div>
+
+<p>My Value = {{myValue}}</p>
