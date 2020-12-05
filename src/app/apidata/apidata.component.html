@@ -1,0 +1,16 @@
+<h3 class="text-center text-primary">Data From API</h3>
+<hr/>
+<table class="table table-bordered table-striped">
+    <tr>
+        <th>User ID</th>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Body</th>
+    </tr>
+    <tr *ngFor="let post of Posts">
+        <td>{{post.userId}}</td>
+        <td>{{post.id}}</td>
+        <td>{{post.title}}</td>
+        <td>{{post.body}}</td>
+    </tr>
+</table>

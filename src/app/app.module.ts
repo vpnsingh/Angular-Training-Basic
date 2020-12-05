@@ -15,6 +15,10 @@ import { CommonService } from './shared/common.service';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { P1Component } from './pipes/p1/p1.component';
 
+import { HttpClientModule } from '@angular/common/http';
+import { JsonService } from './shared/json.service';
+import { ApidataComponent } from './apidata/apidata.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,15 +27,17 @@ import { P1Component } from './pipes/p1/p1.component';
     PipesComponent,
     FormsComponent,
     PagenotfoundComponent,
-    P1Component
+    P1Component,
+    ApidataComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [CommonService],
+  providers: [CommonService, JsonService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
