@@ -1,5 +1,24 @@
 <h3 class="text-center text-primary">Data From API</h3>
 <hr/>
+<div class="container" *ngIf="userData">
+    <div class="row">
+      <div class="col-md-6 img">
+        <img src="{{userData.picture.large}}"  alt="" class="img-rounded">
+      </div>
+      <div class="col-md-6 details">
+        <blockquote>
+          <h5>{{userData.name.title}} {{userData.name.first}} {{userData.name.last}}</h5>
+          <small><cite title="Source Title">{{userData.location.city}}, {{userData.location.country}}<i class="icon-map-marker"></i></cite></small>
+        </blockquote>
+        <p>
+          {{userData.email}} <br>
+          {{userData.phone}} <br>
+          {{userData.dob.date | date}}
+        </p>
+      </div>
+    </div>
+  </div>
+<hr/>
 <table class="table table-bordered table-striped">
     <tr>
         <th>User ID</th>

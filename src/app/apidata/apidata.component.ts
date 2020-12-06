@@ -9,11 +9,13 @@ import { JsonService} from '../shared/json.service';
 export class ApidataComponent implements OnInit {
 
   Posts: any;
+  userData : any;
   constructor(private jservice : JsonService) { }
 
   ngOnInit(): void {
     this.fetchPost();
     this.fetchPhotos();
+    this.fetchRandomUser();
   }
 
   fetchPost(){
@@ -26,6 +28,13 @@ export class ApidataComponent implements OnInit {
   fetchPhotos(){
     this.jservice.getPhotos().subscribe(res => {
       console.log('photo data', res);
+    })
+  }
+
+  fetchRandomUser(){
+    this.jservice.getRandomUser().subscribe((res:any) => {
+      console.log('random user', res.results[0]);
+      this.userData = res.results[0];
     })
   }
 }
