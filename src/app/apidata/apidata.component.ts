@@ -7,15 +7,21 @@ import { JsonService} from '../shared/json.service';
   styleUrls: ['./apidata.component.css']
 })
 export class ApidataComponent implements OnInit {
-
+  p: number = 1;
   Posts: any;
   userData : any;
+  products : any;
   constructor(private jservice : JsonService) { }
 
   ngOnInit(): void {
     this.fetchPost();
     this.fetchPhotos();
     this.fetchRandomUser();
+
+    this.jservice.getProducts().subscribe(res => {
+      this.products = res;
+      console.log('products data', res);
+    })
   }
 
   fetchPost(){

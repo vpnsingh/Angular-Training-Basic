@@ -29,11 +29,20 @@ export class DirectiveComponent implements OnInit {
 
   vehicle = 'train';
   myValue;
+  info1 : any;
+  info2 : any;
+  info3 : any;
   constructor(private commonService : CommonService) { }
 
   ngOnInit(): void {
     // 
     this.myValue = this.commonService.currentValue;
+    this.getDataFromStorage();
   }
 
+  getDataFromStorage(){
+    this.info1 = localStorage.getItem('event-name');
+    this.info2 = localStorage.getItem('event-location');
+    this.info3 = localStorage.getItem('event-type');
+  }
 }

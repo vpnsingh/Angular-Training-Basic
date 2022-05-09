@@ -21,4 +21,8 @@ export class JsonService {
   getRandomUser(){
     return this.http.get(randomUserURL);
   }
+
+  getProducts(){
+    return this.http.get('https://fakestoreapi.com/products');
+  }
 }

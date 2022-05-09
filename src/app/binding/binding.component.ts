@@ -32,6 +32,7 @@ export class BindingComponent implements OnInit {
 
   ngOnInit(): void {
     this.mydate = this.common.getData();
+    this.storeData();
   }
 
   myClickFunction(event) {
@@ -41,5 +42,11 @@ export class BindingComponent implements OnInit {
 
   updateValue(){
     this.common.currentValue = this.typeValue;
+  }
+
+  storeData(){
+    localStorage.setItem('event-name', 'Mono2020');
+    localStorage.setItem('event-location', 'Mumbai');
+    localStorage.setItem('event-type', 'Celebration');
   }
 }

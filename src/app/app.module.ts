@@ -18,6 +18,11 @@ import { P1Component } from './pipes/p1/p1.component';
 import { HttpClientModule } from '@angular/common/http';
 import { JsonService } from './shared/json.service';
 import { ApidataComponent } from './apidata/apidata.component';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component';
+
+import {NgxPaginationModule} from 'ngx-pagination';
+import { LifecycleComponent } from './lifecycle/lifecycle.component';
 
 @NgModule({
   declarations: [
@@ -28,14 +33,18 @@ import { ApidataComponent } from './apidata/apidata.component';
     FormsComponent,
     PagenotfoundComponent,
     P1Component,
-    ApidataComponent
+    ApidataComponent,
+    ParentComponent,
+    ChildComponent,
+    LifecycleComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxPaginationModule
   ],
   providers: [CommonService, JsonService],
   bootstrap: [AppComponent]

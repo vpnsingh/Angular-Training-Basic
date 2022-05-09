@@ -19,6 +19,31 @@
     </div>
   </div>
 <hr/>
+<div class="container" *ngIf="products">
+  <div class="row">
+    <div class="col-12 col-sm-8 col-md-4 col-lg-4" *ngFor="let product of products">
+      <div class="card">
+        <img class="card-img" src="{{product.image}}" alt="Vans" style="width: 200px;height: 200px;">
+        <div class="card-img-overlay d-flex justify-content-end">
+          <a href="#" class="card-link text-danger like">
+            <i class="fas fa-heart"></i>
+          </a>
+        </div>
+        <div class="card-body">
+          <h4 class="card-title">{{product.title}}</h4>
+          <h6 class="card-subtitle mb-2 text-muted">Category: {{product.category | titlecase}}</h6>
+          <p class="card-text">{{product.description}}</p>
+          <div class="buy d-flex justify-content-between align-items-center">
+            <div class="price text-success"><h5 class="mt-4">$ {{product.price}}</h5></div>
+             <a href="#" class="btn btn-danger mt-3"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br/>
+  </div>
+</div>
+<hr/>
 <table class="table table-bordered table-striped">
     <tr>
         <th>User ID</th>
@@ -26,10 +51,13 @@
         <th>Title</th>
         <th>Body</th>
     </tr>
-    <tr *ngFor="let post of Posts">
+    <tr *ngFor="let post of Posts | paginate: { itemsPerPage: 10, currentPage: p }">
         <td>{{post.userId}}</td>
         <td>{{post.id}}</td>
         <td>{{post.title}}</td>
         <td>{{post.body}}</td>
+    </tr>
+    <tr>
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
     </tr>
 </table>
